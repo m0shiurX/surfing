@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <?php wp_head(); ?>
-</head>
+<?php get_header(); ?>
 <body <?php body_class() ?>>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4"><?php bloginfo("name"); ?></h1>
-            <p class="lead"><?php bloginfo("description"); ?></p>
-            <hr class="my-2">
-        </div>
-    </div>
-
+    <?php get_template_part("banner"); ?>
     <div class="container">
         <?php 
-
             while(have_posts()): the_post();?>
                 <div <?php post_class("my-5 row") ?>>
-                    <div class="col-5">
+                    <div class="col-6">
                         <?php
                             if(has_post_thumbnail()){
-                                the_post_thumbnail("medium", ["class"=> "img-fluid"]);
+                                the_post_thumbnail("large", ["class"=> "img-fluid"]);
                             }
                         ?>
                     </div>
-                    <div class="col-7">
-                        <h2><?php the_title(); ?> </h2>
+                    <div class="col-6">
+                        <h2> <a href="<?php the_permalink() ?>"> <?php the_title(); ?> </a> </h2>
                         <h6 class="text-black-50">On <i><?php echo get_the_date(); ?></i>
                         written by <?php the_author(); ?></h6>
-                        <p><?php the_excerpt(); ?> </p>
+                        <p>
+                            <?php the_excerpt(); ?> </p>
                     </div>
                 </div>
                     
@@ -37,6 +25,4 @@
             endwhile;
         ?>
     </div>
-    <?php wp_footer(); ?>
-</body>
-</html>
+<?php get_footer(); ?>
