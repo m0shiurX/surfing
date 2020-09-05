@@ -7,3 +7,8 @@ Author: Moshiur
 Author URI: https://moshiur.pro
 Text Domain: surfing
 */
+
+img {
+    max-width: 90%;
+    margin: auto;
+}
