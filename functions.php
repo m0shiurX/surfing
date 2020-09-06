@@ -3,6 +3,7 @@
 function surfing_initialize(){
     add_theme_support("post-thumbnails");
     add_theme_support("title-tag");
+    register_nav_menu("top_nav", "Main navigation bar on top");
 }
 
 add_action("after_setup_theme", "surfing_initialize");

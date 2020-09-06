@@ -12,3 +12,7 @@ img {
     max-width: 90%;
     margin: auto;
 }
+
+#top_nav .menu-item {
+    margin-right: 10px;
+}

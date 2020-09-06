@@ -9,7 +9,9 @@
                         <?php
                             if(has_post_thumbnail()){
                                 the_post_thumbnail("large", ["class"=> "img-fluid"]);
-                            }
+                            } else {?>
+                                <img src="<?php echo get_template_directory_uri()."/assets/thumbnail.png"; ?>" class="img-fluid">
+                            <?php }
                         ?>
                     </div>
                     <div class="col-6">
