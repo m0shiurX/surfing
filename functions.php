@@ -5,9 +5,34 @@ function surfing_initialize(){
     add_theme_support("post-thumbnails");
     add_theme_support("title-tag");
     register_nav_menu("top_nav", "Main navigation bar on top");
+    add_theme_support("custom-logo", [
+        "width" => 280,
+        "height"=> 100,
+        "flex-height" => true,
+        "flex-width"  => true,
+        'header-text' => array( 'site-title', 'site-description')
+    ]);
+
+    add_theme_support("custom-header", [
+        "width" => 1200,
+        "height"=> 300,
+        "flex-height" => true,
+        "flex-width"  => true,
+        'header-text' => true,
+        "default-text-color" => "#1c1c1c",
+    ]);
+
+    add_theme_support("custom-background",[
+        'default-color'      => '#0000ff',
+        'default-image'      => '',
+        'default-position-x' => 'center',
+        'default-position-y' => 'center',
+        'default-repeat'     => 'no-repeat',
+        'default-size'     => 'cover',
+        'default-attachment'     => 'fixed',
+    ]);
 }
 add_action("after_setup_theme", "surfing_initialize");
-
 
 // Loading assets
 function surfing_assets(){

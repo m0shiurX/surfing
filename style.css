@@ -9,10 +9,19 @@ Text Domain: surfing
 */
 
 img {
-    max-width: 90%;
+    max-width: 100%;
     margin: auto;
 }
 
+.custom-logo {
+    width: 200px;
+    height: auto;
+}
+.custom_header {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+}
 /* #top_nav .menu-item {
     margin-right: 10px;
 } */

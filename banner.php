@@ -1,7 +1,21 @@
+<div class="container-fluid p-0">
+    <?php
+        if(get_header_image()): ?>
+        <img src="<?php header_image(); ?>" class="custom_header">
+        <?php endif;
+    ?>
+</div>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4"> <a href="<?php echo site_url(); ?>"> <?php bloginfo("name"); ?> </a></h1>
-        <p class="lead"><?php bloginfo("description"); ?></p>
+        <div class="col-6">
+            <?php
+                if(current_theme_supports("custom-logo")){
+                    the_custom_logo();
+                }
+            ?>
+        </div>
+        <h1 class="display-4 site-title"> <a href="<?php echo site_url(); ?>"> <?php bloginfo("name"); ?> </a></h1>
+        <p class="lead site-description"><?php bloginfo("description"); ?></p>
         <hr class="my-2">
         <div class="navigation">
             <?php
